@@ -1,0 +1,232 @@
+[
+  {
+    "id": "Q01",
+    "category": "patch_rag",
+    "question": "What windup delay was added to Cypher Trapwire before it concusses and reveals in Patch 9.08?",
+    "relevant_sources": ["patch_9_08.md"],
+    "expected_keywords": ["0.5 second", "windup", "50 percent"]
+  },
+  {
+    "id": "Q02",
+    "category": "patch_rag",
+    "question": "How many ultimate points does Cypher Neural Theft cost after Patch 9.08?",
+    "relevant_sources": ["patch_9_08.md"],
+    "expected_keywords": ["6 to 7", "7 ultimate points"]
+  },
+  {
+    "id": "Q03",
+    "category": "patch_rag",
+    "question": "What audio change was made to Cypher Cyber Cage in Patch 9.08?",
+    "relevant_sources": ["patch_9_08.md"],
+    "expected_keywords": ["15 percent louder", "7.25 seconds"]
+  },
+  {
+    "id": "Q04",
+    "category": "patch_rag",
+    "question": "Which ability became Phoenix signature ability in Patch 9.08 and how long is its flash duration?",
+    "relevant_sources": ["patch_9_08.md"],
+    "expected_keywords": ["Curveball", "1.25 seconds", "2 kills"]
+  },
+  {
+    "id": "Q05",
+    "category": "patch_rag",
+    "question": "How did Phoenix Blaze wall casting change in Patch 9.08 and what is its credit cost?",
+    "relevant_sources": ["patch_9_08.md"],
+    "expected_keywords": ["through walls", "150 credits", "50 hp"]
+  },
+  {
+    "id": "Q06",
+    "category": "patch_rag",
+    "question": "How long do Gekko Dormant Globules stay in the world and how long is the reclaim channel in Patch 9.08?",
+    "relevant_sources": ["patch_9_08.md"],
+    "expected_keywords": ["15 seconds", "1.5 seconds"]
+  },
+  {
+    "id": "Q07",
+    "category": "patch_rag",
+    "question": "What changed for Gekko Wingman concuss cone and Thrash ultimate cost in Patch 9.08?",
+    "relevant_sources": ["patch_9_08.md"],
+    "expected_keywords": ["15 percent", "8 ultimate points"]
+  },
+  {
+    "id": "Q08",
+    "category": "patch_rag",
+    "question": "What change was made to Yoru Fakeout decoy clone and Dimensional Drift unequip delay in Patch 9.08?",
+    "relevant_sources": ["patch_9_08.md"],
+    "expected_keywords": ["blind and concuss", "0.7 seconds"]
+  },
+  {
+    "id": "Q09",
+    "category": "patch_rag",
+    "question": "How was the Sunset B Site central pillar modified to reduce post-plant spam in Patch 9.08?",
+    "relevant_sources": ["patch_9_08.md"],
+    "expected_keywords": ["non-spammable metal crate", "B Main"]
+  },
+  {
+    "id": "Q10",
+    "category": "patch_rag",
+    "question": "Which maps entered and exited the competitive map rotation in Patch 9.08?",
+    "relevant_sources": ["patch_9_08.md"],
+    "expected_keywords": ["Pearl", "Split", "Icebox", "Lotus"]
+  },
+  {
+    "id": "Q11",
+    "category": "tactical_rag",
+    "question": "How does Jett execute the Attack Entry Combo using Cloudburst and Tailwind?",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_keywords": ["Cloudburst", "Tailwind", "90 degrees"]
+  },
+  {
+    "id": "Q12",
+    "category": "tactical_rag",
+    "question": "Why is Jett Blade Storm effective on eco or bonus rounds?",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_keywords": ["100 percent mid-air accuracy", "resets"]
+  },
+  {
+    "id": "Q13",
+    "category": "tactical_rag",
+    "question": "What is the maximum range of Omen Paranoia and how should it be timed on Sunset B Main?",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_keywords": ["35 meters", "nearsights"]
+  },
+  {
+    "id": "Q14",
+    "category": "tactical_rag",
+    "question": "How long does Omen Dark Cover smoke last and what is its recharge cooldown?",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_keywords": ["15 seconds", "30 seconds"]
+  },
+  {
+    "id": "Q15",
+    "category": "tactical_rag",
+    "question": "How closely should a teammate follow Sova Owl Drone when clearing rat corners?",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_keywords": ["5 meters", "2-ping"]
+  },
+  {
+    "id": "Q16",
+    "category": "tactical_rag",
+    "question": "How should Cypher combine Trapwire and Cyber Cage after the 0.5s windup nerf?",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_keywords": ["diagonal angles", "Cyber Cage", "0.5s windup"]
+  },
+  {
+    "id": "Q17",
+    "category": "tactical_rag",
+    "question": "At what angle should two surviving attackers set up a post-plant crossfire relative to the Spike?",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_keywords": ["45 to 90 degree", "side-profile trade"]
+  },
+  {
+    "id": "Q18",
+    "category": "tactical_rag",
+    "question": "When should attackers throw their first post-plant delay molly or Shock Bolt during a 7.0 second defuse?",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_keywords": ["3.5 seconds", "half-defuse", "4 to 5 seconds"]
+  },
+  {
+    "id": "Q19",
+    "category": "tactical_rag",
+    "question": "How many credits should a team save in Round 2 after losing pistol round to afford a Round 3 full buy?",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_keywords": ["2000 credits", "3900 credits"]
+  },
+  {
+    "id": "Q20",
+    "category": "tactical_rag",
+    "question": "How can Sova counter Cypher Trapwire setups on Sunset B Main before executing?",
+    "relevant_sources": ["agent_guides.md", "patch_9_08.md"],
+    "expected_keywords": ["Shock Bolt", "double-bounce", "Trapwire"]
+  },
+  {
+    "id": "Q21",
+    "category": "sql_stats",
+    "question": "Compare the cost, fire rate, magazine size, and close-range head damage of the Vandal and Phantom.",
+    "relevant_sources": ["agent_guides.md", "patch_9_08.md"],
+    "expected_sql_table": "weapons",
+    "reference_sql": "SELECT name, cost, fire_rate, magazine_size, head_damage_close, body_damage_close FROM weapons WHERE name IN ('Vandal', 'Phantom') ORDER BY name",
+    "expected_answer_values": ["2900", "160", "156"]
+  },
+  {
+    "id": "Q22",
+    "category": "sql_stats",
+    "question": "Which sniper rifle costs 2400 credits and what are its head and body damage stats?",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_sql_table": "weapons",
+    "reference_sql": "SELECT name, cost, head_damage_close, body_damage_close, leg_damage_close FROM weapons WHERE category = 'Sniper' AND cost = 2400",
+    "expected_answer_values": ["Outlaw", "238", "140"]
+  },
+  {
+    "id": "Q23",
+    "category": "sql_stats",
+    "question": "List all weapons with High wall penetration ordered by cost ascending.",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_sql_table": "weapons",
+    "reference_sql": "SELECT name, category, cost, wall_penetration FROM weapons WHERE wall_penetration = 'High' ORDER BY cost ASC",
+    "expected_answer_values": ["Sheriff", "Guardian", "Outlaw", "Operator"]
+  },
+  {
+    "id": "Q24",
+    "category": "sql_stats",
+    "question": "What has the highest fire rate in the weapons table and what is its magazine size?",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_sql_table": "weapons",
+    "reference_sql": "SELECT name, category, fire_rate, magazine_size, cost FROM weapons ORDER BY fire_rate DESC LIMIT 1",
+    "expected_answer_values": ["Stinger", "16.0", "20"]
+  },
+  {
+    "id": "Q25",
+    "category": "sql_stats",
+    "question": "What are the credit costs and max charges of all four Cypher abilities in the database?",
+    "relevant_sources": ["patch_9_08.md", "agent_guides.md"],
+    "expected_sql_table": "abilities",
+    "reference_sql": "SELECT slot, name, cost_or_ult_points, max_charges FROM abilities WHERE agent = 'Cypher' ORDER BY id",
+    "expected_answer_values": ["Trapwire", "Cyber Cage", "Spycam", "Neural Theft"]
+  },
+  {
+    "id": "Q26",
+    "category": "sql_stats",
+    "question": "Which basic ability in the abilities table has the highest credit cost?",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_sql_table": "abilities",
+    "reference_sql": "SELECT agent, slot, name, cost_or_ult_points FROM abilities WHERE slot IN ('C', 'Q', 'E') ORDER BY cost_or_ult_points DESC LIMIT 1",
+    "expected_answer_values": ["Sova", "Owl Drone", "400"]
+  },
+  {
+    "id": "Q27",
+    "category": "sql_stats",
+    "question": "Compare the ultimate point cost of Jett Blade Storm, Sova Hunter's Fury, Omen From the Shadows, and Cypher Neural Theft.",
+    "relevant_sources": ["patch_9_08.md", "agent_guides.md"],
+    "expected_sql_table": "abilities",
+    "reference_sql": "SELECT agent, name, cost_or_ult_points FROM abilities WHERE slot = 'X' ORDER BY cost_or_ult_points DESC, agent ASC",
+    "expected_answer_values": ["Blade Storm", "Hunter's Fury", "Neural Theft", "From the Shadows"]
+  },
+  {
+    "id": "Q28",
+    "category": "sql_stats",
+    "question": "How much does the Sheriff cost and how much close-range head and body damage does it deal?",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_sql_table": "weapons",
+    "reference_sql": "SELECT name, cost, head_damage_close, body_damage_close, leg_damage_close FROM weapons WHERE name = 'Sheriff'",
+    "expected_answer_values": ["800", "159", "55"]
+  },
+  {
+    "id": "Q29",
+    "category": "sql_stats",
+    "question": "What are all the Rifle category weapons and their costs and head damage?",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_sql_table": "weapons",
+    "reference_sql": "SELECT name, cost, head_damage_close, body_damage_close FROM weapons WHERE category = 'Rifle' ORDER BY cost ASC",
+    "expected_answer_values": ["Bulldog", "Guardian", "Phantom", "Vandal"]
+  },
+  {
+    "id": "Q30",
+    "category": "sql_stats",
+    "question": "What are the slot, credit cost, and max charges for Omen Paranoia, Dark Cover, and Shrouded Step?",
+    "relevant_sources": ["agent_guides.md"],
+    "expected_sql_table": "abilities",
+    "reference_sql": "SELECT slot, name, cost_or_ult_points, max_charges FROM abilities WHERE agent = 'Omen' AND slot != 'X' ORDER BY slot",
+    "expected_answer_values": ["Paranoia", "250", "Dark Cover", "150", "Shrouded Step", "100"]
+  }
+]

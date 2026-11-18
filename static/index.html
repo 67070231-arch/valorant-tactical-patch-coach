@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VALORANT Tactical & Patch Coach</title>
+  <style>
+    :root {
+      --bg-main: #050505;
+      --bg-surface: #141416;
+      --bg-elevated: #1c1c1f;
+      --bg-hover: #242428;
+      --border-subtle: #222225;
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --accent: #ff4655;
+      --accent-hover: #e03a48;
+      --badge-green: #10b981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 280px;
+      background-color: var(--bg-surface);
+      border-right: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      padding: 20px 16px;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .brand-title {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent);
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .sidebar-section-title {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .quick-prompts {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .prompt-btn {
+      background-color: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      text-align: left;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.4;
+      cursor: pointer;
+      transition: background-color 0.15s, border-color 0.15s;
+    }
+
+    .prompt-btn:hover {
+      background-color: var(--bg-hover);
+      border-color: #343439;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 12px;
+      color: var(--text-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-primary);
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--badge-green);
+    }
+
+    .main-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg-main);
+      min-width: 0;
+    }
+
+    .top-bar {
+      height: 56px;
+      padding: 0 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-main);
+    }
+
+    .top-bar-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .clear-btn {
+      background-color: transparent;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .clear-btn:hover {
+      background-color: var(--bg-surface);
+      color: var(--text-primary);
+    }
+
+    .chat-feed {
+      flex: 1;
+      overflow-y: auto;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 860px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .msg {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 85%;
+    }
+
+    .msg.user {
+      align-self: flex-end;
+    }
+
+    .msg.assistant {
+      align-self: flex-start;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .msg-bubble {
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-size: 14.5px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .msg.user .msg-bubble {
+      background-color: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+    }
+
+    .msg.assistant .msg-bubble {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+    }
+
+    .citations {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .citation-tag {
+      font-size: 11.5px;
+      background-color: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--accent);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    details.trace-box {
+      margin-top: 8px;
+      background-color: var(--bg-main);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    details.trace-box summary {
+      cursor: pointer;
+      font-weight: 500;
+      user-select: none;
+    }
+
+    details.trace-box pre {
+      margin-top: 8px;
+      white-space: pre-wrap;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11.5px;
+      color: #d1d5db;
+    }
+
+    .input-wrapper {
+      padding: 16px 24px 24px;
+      background-color: var(--bg-main);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .input-box {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 8px 10px;
+    }
+
+    .input-box:focus-within {
+      border-color: #3f3f46;
+    }
+
+    .input-box input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text-primary);
+      font-size: 14.5px;
+      padding: 6px 8px;
+    }
+
+    .input-box input::placeholder {
+      color: var(--text-secondary);
+    }
+
+    .send-btn {
+      background-color: var(--accent);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.15s;
+    }
+
+    .send-btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .send-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-title">
+        <span class="brand-dot"></span>
+        VALORANT Coach
+      </div>
+      <div class="brand-sub">Hybrid RAG + Read-Only SQL Agent</div>
+    </div>
+
+    <div>
+      <div class="sidebar-section-title">Example Queries</div>
+      <div class="quick-prompts">
+        <button class="prompt-btn" onclick="usePrompt(this.innerText)">
+          What changed for Cypher in Patch 9.08?
+        </button>
+        <button class="prompt-btn" onclick="usePrompt(this.innerText)">
+          Which rifles cost 2900 credits or less and deal 160 head damage at 30m?
+        </button>
+        <button class="prompt-btn" onclick="usePrompt(this.innerText)">
+          How should Sova and Omen play post-plant on Sunset B-site?
+        </button>
+        <button class="prompt-btn" onclick="usePrompt(this.innerText)">
+          Compare the cost and charges of Jett and Phoenix abilities.
+        </button>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span>Model: gemma-4-E4B-it</span>
+      </div>
+      <div>RRF Hybrid Search + SQLite Guard</div>
+    </div>
+  </aside>
+
+  <main class="main-area">
+    <header class="top-bar">
+      <div class="top-bar-title">VALORANT Tactical & Patch Coach</div>
+      <button class="clear-btn" onclick="clearChat()">Clear Chat</button>
+    </header>
+
+    <div class="chat-feed" id="chatFeed">
+      <div class="msg assistant">
+        <div class="msg-bubble">Welcome! Ask me about VALORANT Patch 9.08 balance changes, agent post-plant tactics, or query exact weapon and ability stats from the database.</div>
+      </div>
+    </div>
+
+    <div class="input-wrapper">
+      <form class="input-box" onsubmit="sendMessage(event)">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Ask about patch notes, agent lineups, or weapon stats..."
+          autocomplete="off"
+        />
+        <button type="submit" class="send-btn" id="sendBtn">Send</button>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    const chatFeed = document.getElementById("chatFeed");
+    const userInput = document.getElementById("userInput");
+    const sendBtn = document.getElementById("sendBtn");
+
+    function usePrompt(text) {
+      userInput.value = text.trim();
+      userInput.focus();
+    }
+
+    function clearChat() {
+      chatFeed.innerHTML = `
+        <div class="msg assistant">
+          <div class="msg-bubble">Chat cleared. How can I help with your VALORANT tactics or weapon stats?</div>
+        </div>
+      `;
+    }
+
+    function appendMessage(role, text, citations = [], trace = []) {
+      const wrapper = document.createElement("div");
+      wrapper.className = `msg ${role}`;
+
+      const bubble = document.createElement("div");
+      bubble.className = "msg-bubble";
+      bubble.textContent = text;
+
+      if (role === "assistant" && Array.isArray(citations) && citations.length > 0) {
+        const citeRow = document.createElement("div");
+        citeRow.className = "citations";
+        citations.forEach((src) => {
+          const tag = document.createElement("span");
+          tag.className = "citation-tag";
+          tag.textContent = src;
+          citeRow.appendChild(tag);
+        });
+        bubble.appendChild(citeRow);
+      }
+
+      if (role === "assistant" && Array.isArray(trace) && trace.length > 0) {
+        const details = document.createElement("details");
+        details.className = "trace-box";
+        const summary = document.createElement("summary");
+        summary.textContent = `Tool Execution Trace (${trace.length} call${trace.length > 1 ? "s" : ""})`;
+        const pre = document.createElement("pre");
+        pre.textContent = JSON.stringify(trace, null, 2);
+        details.appendChild(summary);
+        details.appendChild(pre);
+        bubble.appendChild(details);
+      }
+
+      wrapper.appendChild(bubble);
+      chatFeed.appendChild(wrapper);
+      chatFeed.scrollTop = chatFeed.scrollHeight;
+      return wrapper;
+    }
+
+    async function sendMessage(e) {
+      e.preventDefault();
+      const message = userInput.value.trim();
+      if (!message) return;
+
+      appendMessage("user", message);
+      userInput.value = "";
+      sendBtn.disabled = true;
+
+      const loadingEl = appendMessage("assistant", "Thinking...");
+
+      try {
+        const res = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message })
+        });
+        const data = await res.json();
+        loadingEl.remove();
+
+        if (!res.ok) {
+          appendMessage("assistant", `Error: ${data.detail || "Request failed"}`);
+        } else {
+          const answer = data.answer || data.reply || data.response || JSON.stringify(data);
+          const citations = data.citations || data.sources || [];
+          const trace = data.tool_trace || data.trace || data.steps || [];
+          appendMessage("assistant", answer, citations, trace);
+        }
+      } catch (err) {
+        loadingEl.remove();
+        appendMessage("assistant", `Network error: ${err.message}`);
+      } finally {
+        sendBtn.disabled = false;
+        userInput.focus();
+      }
+    }
+  </script>
+</body>
+</html>
